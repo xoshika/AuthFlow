@@ -103,7 +103,7 @@ input::-ms-reveal, input::-ms-clear { display: none; }
   </div>
 
   <!-- WELCOME CTA -->
-  <div style="text-align:center;margin-bottom:2rem;animation:fadeIn 0.5s ease">
+  <div id="welcomeCTA" style="text-align:center;margin-bottom:2rem;animation:fadeIn 0.5s ease">
     <h1 style="font-size:24px;font-weight:600;margin-bottom:8px;background:linear-gradient(135deg,var(--text),var(--muted));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Sign up here for hacking lessons!</h1>
     <p style="font-size:14px;color:var(--muted);max-width:400px;margin:0 auto">Learn OWASP top security risks through interactive, hands-on labs.</p>
   </div>
@@ -426,6 +426,7 @@ async function doLogout(){
 
 function showDashboard(user){
   document.getElementById('authCard').style.display='none';
+  document.getElementById('welcomeCTA').style.display='none';
   const ds=document.getElementById('dashSection');ds.style.display='';
   document.getElementById('avatarEl').textContent=user.name.charAt(0).toUpperCase();
   document.getElementById('dashName').textContent=user.name;

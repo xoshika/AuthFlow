@@ -1,9 +1,10 @@
 <?php
-// db_config.php - Database credentials from environment variables
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_NAME', getenv('DB_NAME') ?: 'authvault');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
+// db_config.php - Database credentials
+// Get these from your InfinityFree Control Panel (MySQL Databases section)
+define('DB_HOST', 'sql103.infinityfree.com'); 
+define('DB_NAME', 'if0_41849845_authvault');  
+define('DB_USER', 'if0_41849845');            
+define('DB_PASS', 'lMyLXfxOkf5U');    
 
 /**
  * Returns a PDO database connection.
@@ -25,9 +26,9 @@ function getDB() {
     try {
         return new PDO($dsn, $user, $pass, $options);
     } catch (\PDOException $e) {
-        // In production, don't reveal the error message
-        header('Content-Type: application/json', true, 500);
-        echo json_encode(['error' => 'Database connection failed']);
+        // TEMPORARY DEBUG MODE: Reveal the real error
+        header('Content-Type: application/json');
+        echo json_encode(['error' => 'DB Connection failed: ' . $e->getMessage()]);
         exit;
     }
 }

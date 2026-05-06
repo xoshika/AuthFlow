@@ -1,6 +1,5 @@
 -- SQL Schema for AuthVault
-CREATE DATABASE IF NOT EXISTS authvault;
-USE authvault;
+
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,

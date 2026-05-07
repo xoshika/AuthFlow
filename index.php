@@ -23,11 +23,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);margin:0;dis
 .field{margin-bottom:1.1rem}
 label{display:block;font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px}
 .input-wrap{position:relative}
-input[type="text"],input[type="email"],input[type="password"]{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:9px;padding:11px 40px 11px 14px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+input[type="text"],input[type="email"],input[type="password"]{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:9px;padding:11px 14px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s}
 input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,142,247,0.12)}
 input.error{border-color:var(--danger)}
 input.ok{border-color:var(--success)}
 input::-ms-reveal, input::-ms-clear { display: none; }
+.input-wrap input{padding-right:40px}
 .field-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:color 0.2s}
 .field-icon:hover{color:var(--text)}
 .field-icon svg{width:18px;height:18px;display:block}
@@ -45,8 +46,8 @@ input::-ms-reveal, input::-ms-clear { display: none; }
 .tag{padding:4px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px}
 .tag span{color:var(--success)}
 .dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0}
-.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;color:white}
-.logout-btn{background:transparent;border:1px solid var(--border2);color:var(--muted);font-family:var(--sans);font-size:12px;padding:6px 14px;border-radius:7px;cursor:pointer;transition:all 0.2s}
+.avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:white}
+.logout-btn{background:transparent;border:1px solid var(--border2);color:var(--muted);font-family:var(--sans);font-size:11px;padding:5px 12px;border-radius:7px;cursor:pointer;transition:all 0.2s}
 .logout-btn:hover{border-color:var(--danger);color:var(--danger)}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}
 .info-cell{background:var(--surface2);border-radius:10px;padding:12px 14px}
@@ -58,8 +59,8 @@ input::-ms-reveal, input::-ms-clear { display: none; }
 /* WebGoat lesson styles */
 .lesson-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:0;overflow:hidden;position:relative;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
 .lesson-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--warn),transparent);opacity:0.6;z-index:1}
-.lesson-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border)}
-.lesson-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25);color:var(--warn);font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;margin-bottom:10px}
+.lesson-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.lesson-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25);color:var(--warn);font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;margin-bottom:8px}
 .lesson-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px}
 .lesson-sub{font-size:12px;color:var(--muted)}
 .lesson-body{padding:1.25rem 1.5rem}
@@ -71,17 +72,19 @@ input::-ms-reveal, input::-ms-clear { display: none; }
 .vuln-sql .str{color:var(--warn)}
 .vuln-sql .cmt{color:var(--muted)}
 .lab-area{background:var(--surface2);border-radius:10px;padding:14px;margin-bottom:1rem}
-.lab-row{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.lab-input{flex:1;min-width:160px;background:var(--surface3);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;font-family:var(--mono);font-size:13px;color:var(--text);outline:none;transition:border-color 0.2s}
+.lab-row{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.lab-input{width:100%;min-width:0;background:var(--surface3);border:1px solid var(--border2);border-radius:8px;padding:10px 14px;font-family:var(--mono);font-size:13px;color:var(--text);outline:none;transition:border-color 0.2s;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lab-input:focus{border-color:var(--accent)}
+.lab-btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .lab-btn{padding:9px 18px;background:var(--surface3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;white-space:nowrap}
 .lab-btn:hover{border-color:var(--accent);color:var(--accent)}
 .lab-btn.atk{border-color:rgba(248,113,113,0.35);color:var(--danger)}
 .lab-btn.atk:hover{background:rgba(248,113,113,0.08)}
-.query-preview{font-family:var(--mono);font-size:12px;padding:10px 12px;background:rgba(0,0,0,0.25);border-radius:8px;margin-bottom:10px;line-height:1.6;color:#b0b8d0;min-height:40px;word-break:break-all}
-.result-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
-.result-table th{font-family:var(--mono);font-weight:500;color:var(--muted);text-align:left;padding:6px 10px;border-bottom:1px solid var(--border2);font-size:11px;text-transform:uppercase;letter-spacing:0.05em}
-.result-table td{font-family:var(--mono);padding:6px 10px;color:var(--text);border-bottom:1px solid var(--border)}
+.query-preview{font-family:var(--mono);font-size:12px;padding:10px 12px;background:rgba(0,0,0,0.25);border-radius:8px;margin-bottom:10px;line-height:1.6;color:#b0b8d0;min-height:50px;word-break:break-all}
+.table-container{max-height:200px;overflow-y:auto;background:rgba(0,0,0,0.1);border-radius:8px;margin-bottom:10px;border:1px solid var(--border2)}
+.result-table{width:100%;border-collapse:collapse;font-size:12px}
+.result-table th{font-family:var(--mono);font-weight:500;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--border2);font-size:11px;text-transform:uppercase;letter-spacing:0.05em;position:sticky;top:0;background:var(--surface2);z-index:2}
+.result-table td{font-family:var(--mono);padding:8px 10px;color:var(--text);border-bottom:1px solid var(--border);word-break:break-all}
 .result-table tr.highlight td{color:var(--danger);background:rgba(248,113,113,0.05)}
 .result-table tr:last-child td{border-bottom:none}
 .explanation{background:rgba(52,211,153,0.07);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--text);line-height:1.6;margin-top:10px;display:none}
@@ -176,35 +179,24 @@ input::-ms-reveal, input::-ms-clear { display: none; }
   <!-- DASHBOARD + LESSON (hidden until login) -->
   <div id="dashSection" style="display:none">
 
-    <!-- User header -->
-    <div class="card fade-in" style="padding:1.25rem 1.5rem">
-      <div class="dash-header" style="margin-bottom:0">
-        <div style="display:flex;align-items:center;gap:12px">
-          <div class="avatar" id="avatarEl"></div>
-          <div>
-            <div style="font-weight:600;font-size:15px" id="dashName"></div>
-            <div style="font-size:12px;color:var(--success)">● Authenticated</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:8px">
-          <a href="https://github.com/WebGoat/WebGoat" target="_blank" class="logout-btn" style="text-decoration:none;display:flex;align-items:center;gap:6px">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            WebGoat
-          </a>
-          <button class="logout-btn" onclick="doLogout()">Sign out</button>
-        </div>
-      </div>
-    </div>
-
     <!-- WebGoat Lesson -->
     <div class="lesson-card fade-in">
       <div class="lesson-header">
-        <div class="lesson-badge">
-
-          <span style="font-size:14px"></span> WebGoat · OWASP A03
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div class="lesson-badge">
+            <span style="font-size:14px"></span> WebGoat · OWASP A03
+          </div>
+          <div class="lesson-title">SQL Injection — Authentication Bypass</div>
+          <div class="lesson-sub">Learn how attackers exploit unsanitized login queries, then discover the fix</div>
         </div>
-        <div class="lesson-title">SQL Injection — Authentication Bypass</div>
-        <div class="lesson-sub">Learn how attackers exploit unsanitized login queries, then discover the fix</div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="text-align:right">
+            <div style="font-weight:600;font-size:14px;color:var(--text)" id="dashName"></div>
+            <div style="font-size:11px;color:var(--success)">● Online</div>
+          </div>
+          <div class="avatar" id="avatarEl"></div>
+          <button class="logout-btn" onclick="doLogout()" style="margin-left:8px">Sign out</button>
+        </div>
       </div>
 
       <div class="lesson-body">
@@ -242,7 +234,7 @@ input::-ms-reveal, input::-ms-clear { display: none; }
               <input class="lab-input" id="labEmail" placeholder="Email / username" oninput="updateQuery()"/>
               <input class="lab-input" id="labPass" placeholder="Password" oninput="updateQuery()"/>
             </div>
-            <div class="lab-row">
+            <div class="lab-btn-row">
               <button class="lab-btn" onclick="fillNormal()">Normal login</button>
               <button class="lab-btn atk" onclick="fillAttack1()">Inject #1 — always true</button>
               <button class="lab-btn atk" onclick="fillAttack2()">Inject #2 — comment trick</button>
@@ -252,7 +244,9 @@ input::-ms-reveal, input::-ms-clear { display: none; }
             <div class="query-preview" id="queryPreview">SELECT * FROM users WHERE email = '' AND password = '';</div>
             <div id="resultArea" style="display:none">
               <div class="section-label" style="margin-top:10px;margin-bottom:4px">Query result</div>
-              <table class="result-table" id="resultTable"></table>
+              <div class="table-container">
+                <table class="result-table" id="resultTable"></table>
+              </div>
               <div class="explanation" id="explainBox"></div>
             </div>
           </div>
